@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            @font-face { font-family: "PressStart2P"; src: url("styles/PressStart2P.ttf") }
+            body {
+				font-family: "PressStart2P";
+				text-align: center;
+				border: 0 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+            canvas {
+                border: 1px solid black;
+                image-rendering: crisp-edges;
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0; 
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="canvasContainer">
+            <canvas id="background" width="1024" height="896"></canvas>
+            <canvas id="characters" width="1024" height="896"></canvas>
+            <canvas id="foreground" width="1024" height="896"></canvas>
+            <canvas id="menuA" width="1024" height="896"></canvas>
+            <canvas id="menuB" width="1024" height="896"></canvas>
+            <canvas id="menuC" width="1024" height="896"></canvas>
+            <canvas id="menucursorA" width="1024" height="896"></canvas>
+            <canvas id="menucursorB" width="1024" height="896"></canvas>
+            <canvas id="menutext" width="1024" height="896"></canvas>
+        </div>
+        <div id="fontLoader">
+            <div style="font-family:PressStart2P">&nbsp;</div>
+        </div>
+        <script src="out.min.js"></script>
+        <script type="text/javascript">document.addEventListener("DOMContentLoaded", game.fullInit);</script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+    <head><title>Server Host Control Panel</title></head>
+    <body>
+        <button onclick="DoRealInit()">Start Game</button>
+        <button onclick="PauseGame()">Pause Game</button>
+        <button onclick="ResumeGame()">Resume Game</button>
+        <script src="out.min.js"></script>
+        <script type="text/javascript">
+            let currTime = 0, timerInterval = 0;
+            const adminURL = "erzrcHost.php/", securityKey = "/halfAssedSecurityKey";
+            ajax.NewGame = function(success) {
+                fetch(adminURL + "NewGame" + securityKey, optsGet).then(r => r.json()).then(function (body) {
+                    console.log(body);
+                    if(!body.success) { return; }
+                    success(body.newTime);
+                });
+            };
+            ajax.AdvanceClock = function(success) {
+                fetch(adminURL + "AdvanceRound" + securityKey, optsGet).then(r => r.json()).then(function (body) {
+                    console.log(body);
+                    if(!body.success) { return; }
+                    if(body.endGame === true) {
+                        setTimeout(DoRealInit, 30000);
+                    } else {
+                        success(body.newTime);
+                    }
+                });
+            };
+            function DoRealInit() {  ajax.NewGame(StartTimer); }
+            function PauseGame() { clearInterval(timerInterval); }
+            function ResumeGame() {
+                clearInterval(timerInterval);
+                ajax.AdvanceClock(StartTimer);
+            }
+            function StartTimer(time) {
+                currTime = new Date(time * 1000);
+                timerInterval = setInterval(UpdateTime, 100);
+            }
+            function UpdateTime() {
+                const newTime = (new Date() - currTime) / 1000;
+                if(newTime < game.sRound) { return; }
+                console.log(new Date());
+                console.log("NEW TIME!");
+                ajax.AdvanceClock(StartTimer);
+                clearInterval(timerInterval);
+            }
+        </script>
+    </body>
+</html>
