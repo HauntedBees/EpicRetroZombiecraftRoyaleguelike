@@ -19,13 +19,13 @@ G
 * **epic.html** and **erzcr.php** are what players use and interact with. *CreatePlayer* is called when a new player tries to join the game. *GetMap* is called at the start of every round. When the user tries to perform any action, it is validated with a call to *TryAction*. There are client-side checks, but, y'know. Can't trust those.
 * **index.html** is a fake crowdfunding page for April Foolery reasons.
 * the **js folder** contains all the client-side source files.
- * **ajax.js** holds all calls to **errcr.php**.
- * **collisions.js** is just a 2D array containing info about the static map data.
- * **gfx.js** handles all drawing and writing to the HTML5 canvas.
- * **input.js** handles keyboard and gamepad input.
- * **main.js** is what handles transitions between screens as well as performing initial setup.
- * **titleScreen.js** holds the title screen and all error messages.
- * **worldmap.js** contains all the actual game stuff.
+    * **ajax.js** holds all calls to **errcr.php**.
+    * **collisions.js** is just a 2D array containing info about the static map data.
+    * **gfx.js** handles all drawing and writing to the HTML5 canvas.
+    * **input.js** handles keyboard and gamepad input.
+    * **main.js** is what handles transitions between screens as well as performing initial setup.
+    * **titleScreen.js** holds the title screen and all error messages.
+    * **worldmap.js** contains all the actual game stuff.
 
 ## License
 
