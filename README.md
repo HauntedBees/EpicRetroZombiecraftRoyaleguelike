@@ -29,4 +29,4 @@ G
 
 ## License
 
-All JavaScript, SQL, and PHP code is AGPLv3 licensed. *sheet.png* is CC-BY-SA 4.0. The rest all use a [public domain image for the background](https://www.pexels.com/photo/green-water-fountain-225769/) and then there's text on it. Those are CC0. That probably covers everything.
+All JavaScript, SQL, and PHP code is AGPLv3 licensed. *sheet.png* is CC-BY-SA 4.0. The rest all use a public domain image for the background and then there's text on it. Those are CC0. That probably covers everything.
